@@ -1,0 +1,26 @@
+<div class="page-header">
+  <h1>
+    Resource neededs
+    <a href="/resource_neededs/new" class="btn btn-lg btn-success">New Resource needed</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Actions</th>
+      </tr>
+
+      <% @resource_neededs.each do |resource_needed| %>
+      <tr>
+        <td>
+          <a href="/resource_neededs/<%= resource_needed.id %>" class="btn btn-primary">Show</a>
+          <a href="/resource_neededs/<%= resource_needed.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_resource_needed/<%= resource_needed.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
