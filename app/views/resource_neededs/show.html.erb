@@ -48,6 +48,53 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_action_step" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <input type="text" id="description" name="description" placeholder="Description" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for specifics_of_implementation -->
+      <div class="form-group">
+        <label for="specifics_of_implementation" class="control-label">
+          Specifics of implementation
+        </label>
+
+        <input type="text" id="specifics_of_implementation" name="specifics_of_implementation" placeholder="Specifics of implementation" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for resource_id -->
+      <div class="form-group">
+        <label for="resource_id" class="control-label">
+          Resource
+        </label>
+
+        <%= select_tag(:resource_id, options_from_collection_for_select(ResourceNeeded.all, :id, :created_at), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for measure_id -->
+      <div class="form-group">
+        <label for="measure_id" class="control-label">
+          Measure
+        </label>
+
+        <%= select_tag(:measure_id, options_from_collection_for_select(MeasuresOfSuccess.all, :id, :created_at), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Action Step
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

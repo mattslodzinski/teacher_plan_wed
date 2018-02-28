@@ -6,6 +6,7 @@ class MeasuresOfSuccessesController < ApplicationController
   end
 
   def show
+    @action_step = ActionStep.new
     @measures_of_success = MeasuresOfSuccess.find(params[:id])
 
     render("measures_of_successes/show.html.erb")

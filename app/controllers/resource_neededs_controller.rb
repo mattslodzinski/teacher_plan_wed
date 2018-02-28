@@ -6,6 +6,7 @@ class ResourceNeededsController < ApplicationController
   end
 
   def show
+    @action_step = ActionStep.new
     @resource_needed = ResourceNeeded.find(params[:id])
 
     render("resource_neededs/show.html.erb")
