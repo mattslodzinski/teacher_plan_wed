@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "action_steps#index"
   # Routes for the Measures_of_success resource:
   # CREATE
   get "/measures_of_successes/new", :controller => "measures_of_successes", :action => "new"
