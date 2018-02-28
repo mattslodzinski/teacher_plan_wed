@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  belongs_to :action,
+             :required => false,
+             :class_name => "ActionStep"
+
   # Indirect associations
 
   # Validations
