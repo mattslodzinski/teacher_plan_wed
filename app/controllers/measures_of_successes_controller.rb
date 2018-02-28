@@ -1,6 +1,6 @@
 class MeasuresOfSuccessesController < ApplicationController
   def index
-    @measures_of_successes = MeasuresOfSuccess.all
+    @measures_of_successes = MeasuresOfSuccess.page(params[:page]).per(10)
 
     render("measures_of_successes/index.html.erb")
   end

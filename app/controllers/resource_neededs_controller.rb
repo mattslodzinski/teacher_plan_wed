@@ -1,6 +1,6 @@
 class ResourceNeededsController < ApplicationController
   def index
-    @resource_neededs = ResourceNeeded.all
+    @resource_neededs = ResourceNeeded.page(params[:page]).per(10)
 
     render("resource_neededs/index.html.erb")
   end
