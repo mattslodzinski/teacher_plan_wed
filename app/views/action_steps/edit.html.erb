@@ -51,7 +51,7 @@
           Measure
         </label>
 
-        <input type="text" id="measure_id" name="measure_id" placeholder="Measure" class="form-control" value="<%= @action_step.measure_id %>">
+        <%= select_tag(:measure_id, options_from_collection_for_select(MeasuresOfSuccess.all, :id, :created_at, @action_step.measure_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
