@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @action_step.errors.any? %>
+  <% @action_step.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Action Step</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_action_step" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <input type="text" id="description" name="description" placeholder="Description" class="form-control" value="<%= @action_step.description %>">
+      </div>
+
+      <!-- Label and input for specifics_of_implementation -->
+      <div class="form-group">
+        <label for="specifics_of_implementation" class="control-label">
+          Specifics of implementation
+        </label>
+
+        <input type="text" id="specifics_of_implementation" name="specifics_of_implementation" placeholder="Specifics of implementation" class="form-control" value="<%= @action_step.specifics_of_implementation %>">
+      </div>
+
+      <!-- Label and input for resource_id -->
+      <div class="form-group">
+        <label for="resource_id" class="control-label">
+          Resource
+        </label>
+
+        <input type="text" id="resource_id" name="resource_id" placeholder="Resource" class="form-control" value="<%= @action_step.resource_id %>">
+      </div>
+
+      <!-- Label and input for measure_id -->
+      <div class="form-group">
+        <label for="measure_id" class="control-label">
+          Measure
+        </label>
+
+        <input type="text" id="measure_id" name="measure_id" placeholder="Measure" class="form-control" value="<%= @action_step.measure_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Action Step
+      </button>
+      or
+      <a href="/action_steps">Cancel</a>
+    </form>
+  </div>
+</div>

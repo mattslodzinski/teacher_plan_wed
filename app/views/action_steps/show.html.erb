@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h3>Action Step #<%= @action_step.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Description</dt>
+      <dd><%= @action_step.description %></dd>
+
+      <dt>Specifics of implementation</dt>
+      <dd><%= @action_step.specifics_of_implementation %></dd>
+
+      <dt>Resource</dt>
+      <dd><%= @action_step.resource_id %></dd>
+
+      <dt>Measure</dt>
+      <dd><%= @action_step.measure_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/action_steps" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/action_steps/<%= @action_step.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_action_step/<%= @action_step.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
