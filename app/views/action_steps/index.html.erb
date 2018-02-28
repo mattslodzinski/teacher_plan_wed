@@ -20,7 +20,7 @@
       <tr>
         <td><%= action_step.description %></td>
         <td><%= action_step.specifics_of_implementation %></td>
-        <td><%= action_step.resource_id %></td>
+        <td><%= action_step.resource.created_at %></td>
         <td><%= action_step.measure_id %></td>
         <td>
           <a href="/action_steps/<%= action_step.id %>" class="btn btn-primary">Show</a>
