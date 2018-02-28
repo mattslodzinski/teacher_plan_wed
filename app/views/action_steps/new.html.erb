@@ -42,7 +42,7 @@
           Resource
         </label>
 
-        <input type="text" id="resource_id" name="resource_id" placeholder="Resource" class="form-control" value="<%= @action_step.resource_id %>">
+        <%= select_tag(:resource_id, options_from_collection_for_select(ResourceNeeded.all, :id, :created_at, @action_step.resource_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for measure_id -->
