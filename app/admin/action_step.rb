@@ -1,5 +1,7 @@
 ActiveAdmin.register ActionStep do
 
+ permit_params :description, :specifics_of_implementation, :resource_id, :measure_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
