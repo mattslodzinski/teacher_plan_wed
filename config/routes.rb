@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Measures_of_success resource:
+  # CREATE
+  get "/measures_of_successes/new", :controller => "measures_of_successes", :action => "new"
+  post "/create_measures_of_success", :controller => "measures_of_successes", :action => "create"
+
+  # READ
+  get "/measures_of_successes", :controller => "measures_of_successes", :action => "index"
+  get "/measures_of_successes/:id", :controller => "measures_of_successes", :action => "show"
+
+  # UPDATE
+  get "/measures_of_successes/:id/edit", :controller => "measures_of_successes", :action => "edit"
+  post "/update_measures_of_success/:id", :controller => "measures_of_successes", :action => "update"
+
+  # DELETE
+  get "/delete_measures_of_success/:id", :controller => "measures_of_successes", :action => "destroy"
+  #------------------------------
+
   # Routes for the Resource_needed resource:
   # CREATE
   get "/resource_neededs/new", :controller => "resource_neededs", :action => "new"

@@ -1,0 +1,28 @@
+<!-- Validation failure messages -->
+<% if @measures_of_success.errors.any? %>
+  <% @measures_of_success.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Measures Of Success</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_measures_of_success" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <button class="btn btn-success">
+        Create Measures Of Success
+      </button>
+      or
+      <a href="/measures_of_successes">Cancel</a>
+    </form>
+  </div>
+</div>
