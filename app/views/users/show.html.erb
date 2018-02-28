@@ -15,7 +15,13 @@
       <dd><%= @user.first_name %></dd>
 
       <dt>Action</dt>
-      <dd><%= @user.action_id %></dd>
+      <dd>
+        <% if @user.action.present? %>
+          <a href="/action_steps/<%= @user.action_id %>">
+            <%= @user.action.description %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

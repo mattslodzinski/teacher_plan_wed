@@ -20,8 +20,20 @@
       <tr>
         <td><%= action_step.description %></td>
         <td><%= action_step.specifics_of_implementation %></td>
-        <td><%= action_step.resource.created_at %></td>
-        <td><%= action_step.measure.created_at %></td>
+        <td>
+          <% if action_step.resource.present? %>
+            <a href="/resource_neededs/<%= action_step.resource.id %>">
+              <%= action_step.resource.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if action_step.measure.present? %>
+            <a href="/measures_of_successes/<%= action_step.measure.id %>">
+              <%= action_step.measure.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/action_steps/<%= action_step.id %>" class="btn btn-primary">Show</a>
           <a href="/action_steps/<%= action_step.id %>/edit" class="btn btn-warning">Edit</a>

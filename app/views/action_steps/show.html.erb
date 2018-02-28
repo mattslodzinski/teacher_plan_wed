@@ -12,10 +12,22 @@
       <dd><%= @action_step.specifics_of_implementation %></dd>
 
       <dt>Resource</dt>
-      <dd><%= @action_step.resource_id %></dd>
+      <dd>
+        <% if @action_step.resource.present? %>
+          <a href="/resource_neededs/<%= @action_step.resource_id %>">
+            <%= @action_step.resource.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Measure</dt>
-      <dd><%= @action_step.measure_id %></dd>
+      <dd>
+        <% if @action_step.measure.present? %>
+          <a href="/measures_of_successes/<%= @action_step.measure_id %>">
+            <%= @action_step.measure.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

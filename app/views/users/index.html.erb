@@ -21,7 +21,13 @@
         <td><%= user.email %></td>
         <td><%= user.password %></td>
         <td><%= user.first_name %></td>
-        <td><%= user.action.description %></td>
+        <td>
+          <% if user.action.present? %>
+            <a href="/action_steps/<%= user.action.id %>">
+              <%= user.action.description %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/users/<%= user.id %>" class="btn btn-primary">Show</a>
         </td>
