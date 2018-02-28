@@ -1,6 +1,7 @@
 class ResourceNeededsController < ApplicationController
   def index
-    @resource_neededs = ResourceNeeded.page(params[:page]).per(10)
+    @q = ResourceNeeded.ransack(params[:q])
+    @resource_neededs = @q.result(:distinct => true).includes(:action_steps).page(params[:page]).per(10)
 
     render("resource_neededs/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class MeasuresOfSuccessesController < ApplicationController
   def index
-    @measures_of_successes = MeasuresOfSuccess.page(params[:page]).per(10)
+    @q = MeasuresOfSuccess.ransack(params[:q])
+    @measures_of_successes = @q.result(:distinct => true).includes(:action_steps).page(params[:page]).per(10)
 
     render("measures_of_successes/index.html.erb")
   end
